@@ -1,0 +1,16 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: opa-demo
+  region: us-west-2
+  version: "1.24"
+
+availabilityZones: ["us-west-2a", "us-west-2b", "us-west-2c"]
+
+managedNodeGroups:
+- name: general-workload
+  desiredCapacity: 2
+  instanceType: t3.micro
+  ssh:
+    enableSsm: true
